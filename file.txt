@@ -1,0 +1,577 @@
+--html--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Your Name</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Hello, I'm Your Name</h2>
+                <p>A passionate [Your Profession, e.g., Web Developer, Designer, Writer]</p>
+                <a href="#projects" class="btn">View My Work</a>
+            </div>
+            <div class="hero-image">
+                <img src="your-profile-picture.jpg" alt="Your Name Profile Picture">
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        [Write a compelling paragraph about yourself. Highlight your skills, experience, and what drives you. Be concise and engaging.]
+                    </p>
+                    <p>
+                        [Add another paragraph if needed, perhaps focusing on your career goals or a specific area of expertise.]
+                    </p>
+                    <a href="your-resume.pdf" class="btn" download>Download Resume</a>
+                </div>
+                <div class="about-skills">
+                    <h3>Skills</h3>
+                    <ul>
+                        <li><i class="fab fa-html5"></i> HTML5</li>
+                        <li><i class="fab fa-css3-alt"></i> CSS3</li>
+                        <li><i class="fab fa-js"></i> JavaScript</li>
+                        <li><i class="fab fa-react"></i> React</li>
+                        <li><i class="fab fa-node-js"></i> Node.js</li>
+                        <li><i class="fab fa-github"></i> Git & GitHub</li>
+                        <li>[Add more skills as relevant]</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2>My Projects</h2>
+            <div class="project-grid">
+                <div class="project-item">
+                    <img src="project1-thumbnail.jpg" alt="Project 1">
+                    <h3>Project Title 1</h3>
+                    <p>A brief description of your project. Highlight the technologies used and your role.</p>
+                    <div class="project-links">
+                        <a href="#" target="_blank"><i class="fas fa-link"></i> Live Demo</a>
+                        <a href="#" target="_blank"><i class="fab fa-github"></i> GitHub Repo</a>
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <img src="project2-thumbnail.jpg" alt="Project 2">
+                    <h3>Project Title 2</h3>
+                    <p>A brief description of your project. Highlight the technologies used and your role.</p>
+                    <div class="project-links">
+                        <a href="#" target="_blank"><i class="fas fa-link"></i> Live Demo</a>
+                        <a href="#" target="_blank"><i class="fab fa-github"></i> GitHub Repo</a>
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <img src="project3-thumbnail.jpg" alt="Project 3">
+                    <h3>Project Title 3</h3>
+                    <p>A brief description of your project. Highlight the technologies used and your role.</p>
+                    <div class="project-links">
+                        <a href="#" target="_blank"><i class="fas fa-link"></i> Live Demo</a>
+                        <a href="#" target="_blank"><i class="fab fa-github"></i> GitHub Repo</a>
+                    </div>
+                </div>
+                <!-- Add more project items as needed -->
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <div class="contact-content">
+                <p>Have a project in mind or just want to say hello? Feel free to reach out!</p>
+                <div class="contact-details">
+                    <p><i class="fas fa-envelope"></i> your.email@example.com</p>
+                    <p><i class="fas fa-phone"></i> +1 (123) 456-7890</p>
+                    <div class="social-links">
+                        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <!-- Optional: Add a contact form here if you prefer -->
+                <!--
+                <form>
+                    <input type="text" placeholder="Your Name">
+                    <input type="email" placeholder="Your Email">
+                    <textarea placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+                -->
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Your Name. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+--html--
+
+--css--
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+h1, h2, h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.btn {
+    display: inline-block;
+    background: #333;
+    color: #fff;
+    padding: 10px 20px;
+    margin-top: 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background: #555;
+}
+
+/* Header */
+header {
+    background: #fff;
+    padding: 10px 0;
+    border-bottom: #ccc 1px solid;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+header nav ul {
+    margin: 0;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #007bff;
+}
+
+/* Hero Section */
+#hero {
+    background: #e2e2e2;
+    padding: 60px 0;
+    text-align: center;
+}
+
+#hero .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; /* For responsiveness */
+}
+
+.hero-content {
+    flex: 1;
+    text-align: left;
+    padding-right: 30px;
+}
+
+.hero-content h2 {
+    font-size: 48px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.hero-content p {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.hero-image {
+    flex: 1;
+    text-align: center;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%; /* Makes the image circular */
+    border: 5px solid #333; /* Adds a border */
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+/* About Section */
+#about {
+    padding: 60px 0;
+    background: #fff;
+}
+
+#about h2 {
+    font-size: 36px;
+}
+
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.about-text {
+    flex: 2;
+    padding-right: 40px;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+}
+
+.about-skills {
+    flex: 1;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.about-skills h3 {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.about-skills ul li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.about-skills ul li i {
+    margin-right: 10px;
+    font-size: 20px;
+    color: #007bff;
+}
+
+/* Projects Section */
+#projects {
+    padding: 60px 0;
+    background: #e2e2e2;
+}
+
+#projects h2 {
+    font-size: 36px;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.project-item {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.project-item img {
+    max-width: 100%;
+    height: 200px; /* Fixed height for thumbnails */
+    object-fit: cover; /* Ensures images cover the area without distortion */
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.project-item h3 {
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+.project-item p {
+    margin-bottom: 15px;
+    font-size: 15px;
+}
+
+.project-links {
+    margin-top: 15px;
+}
+
+.project-links a {
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.project-links a:hover {
+    color: #007bff;
+}
+
+/* Contact Section */
+#contact {
+    padding: 60px 0;
+    background: #fff;
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 36px;
+}
+
+.contact-content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.contact-details {
+    margin-bottom: 30px;
+}
+
+.contact-details p {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.contact-details p i {
+    margin-right: 10px;
+    font-size: 20px;
+    color: #007bff;
+}
+
+.social-links a {
+    font-size: 28px;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #007bff;
+}
+
+/* Contact Form Styles (if you uncomment them in HTML) */
+#contact form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+#contact form input,
+#contact form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#contact form textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header nav ul {
+        margin-top: 10px;
+        justify-content: center;
+    }
+
+    header nav ul li {
+        margin: 0 10px;
+    }
+
+    #hero .container {
+        flex-direction: column;
+    }
+
+    .hero-content {
+        padding-right: 0;
+        margin-bottom: 30px;
+    }
+
+    .hero-content h2 {
+        font-size: 36px;
+        text-align: center;
+    }
+
+    .hero-content p {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .hero-image img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .about-content {
+        flex-direction: column;
+    }
+
+    .about-text {
+        padding-right: 0;
+        margin-bottom: 30px;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 20px;
+    }
+
+    header nav ul li {
+        margin: 0 5px;
+    }
+
+    header nav ul li a {
+        font-size: 14px;
+    }
+
+    .hero-content h2 {
+        font-size: 30px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+    .btn {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    #about h2, #projects h2, #contact h2 {
+        font-size: 30px;
+    }
+
+    .project-item img {
+        height: 150px;
+    }
+
+    .project-item h3 {
+        font-size: 18px;
+    }
+}
+--css--
+
+--js--
+// JavaScript for potential future enhancements or interactivity
+// For a simple portfolio, you might not need much JavaScript initially.
+
+// Example: Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+// Example: Adding a subtle animation on scroll (requires a library like AOS or custom implementation)
+// For now, this is a placeholder.
+// You can add more complex features like image carousels, form validation, etc., here.
+
+// Example: Simple animation on project hover (already handled by CSS transitions)
+// If you wanted more complex JS animations, you'd implement them here.
+
+console.log("Portfolio website loaded. Ready for action!");
+--js--

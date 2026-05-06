@@ -1,0 +1,312 @@
+
+```css
+:root {
+    --primary-color: #212121;
+    --secondary-color: #f1f1f1;
+    --text-color: #030303;
+    --gray-color: #606060;
+    --light-gray-color: #f9f9f9;
+    --hover-color: #e0e0e0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--light-gray-color);
+    color: var(--text-color);
+    overflow-x: hidden; /* Prevent horizontal scrollbar */
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 1.5rem;
+    background-color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.menu-icon {
+    font-size: 1.5rem;
+    margin-right: 1.5rem;
+    cursor: pointer;
+    color: var(--gray-color);
+}
+
+.logo {
+    height: 25px; /* Adjust as needed */
+    cursor: pointer;
+}
+
+.header-center {
+    display: flex;
+    align-items: center;
+    flex-grow: 1; /* Allows it to take available space */
+    max-width: 600px; /* Limit search bar width */
+    margin: 0 2rem;
+}
+
+.search-bar {
+    flex-grow: 1;
+    padding: 0.5rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 20px 0 0 20px;
+    outline: none;
+    font-size: 1rem;
+}
+
+.search-button {
+    padding: 0.5rem 1.2rem;
+    border: 1px solid #ccc;
+    border-left: none;
+    border-radius: 0 20px 20px 0;
+    background-color: var(--hover-color);
+    cursor: pointer;
+    color: var(--gray-color);
+    font-size: 1rem;
+    transition: background-color 0.2s ease;
+}
+
+.search-button:hover {
+    background-color: var(--hover-color);
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.header-right i {
+    font-size: 1.3rem;
+    margin-left: 1.5rem;
+    cursor: pointer;
+    color: var(--gray-color);
+}
+
+.user-profile img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-left: 1.5rem;
+    cursor: pointer;
+}
+
+/* Container for Sidebar and Main Content */
+.container {
+    display: flex;
+    padding-top: 1rem; /* Space below the header */
+}
+
+/* Sidebar */
+.sidebar {
+    width: 240px; /* Fixed width for sidebar */
+    height: calc(100vh - 60px); /* Full height minus header */
+    background-color: white;
+    padding: 1rem 0;
+    overflow-y: auto; /* Allow scrolling if content overflows */
+    position: sticky;
+    top: 60px; /* Stick below the header */
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(0); /* Default state */
+    z-index: 999;
+}
+
+.sidebar.collapsed {
+    transform: translateX(-100%); /* Hide sidebar */
+}
+
+.sidebar nav ul {
+    list-style: none;
+}
+
+.sidebar nav ul li {
+    padding: 0.8rem 1.5rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    font-size: 0.95rem;
+    color: var(--gray-color);
+}
+
+.sidebar nav ul li i {
+    margin-right: 1rem;
+    font-size: 1.1rem;
+}
+
+.sidebar nav ul li:hover {
+    background-color: var(--hover-color);
+}
+
+.sidebar hr {
+    border: none;
+    height: 1px;
+    background-color: #eee;
+    margin: 0.5rem 0;
+}
+
+/* Main Content */
+.main-content {
+    flex-grow: 1; /* Takes up remaining space */
+    padding: 1.5rem;
+    background-color: var(--light-gray-color);
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.video-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.video-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.video-thumbnail {
+    width: 100%;
+    height: 180px; /* Fixed height for thumbnails */
+    object-fit: cover; /* Ensures image covers the area without distortion */
+}
+
+.video-info {
+    padding: 1rem;
+    flex-grow: 1; /* Allows info to take available space */
+}
+
+.video-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limit to 2 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 500;
+}
+
+.video-channel,
+.video-stats {
+    font-size: 0.85rem;
+    color: var(--gray-color);
+    margin-bottom: 0.3rem;
+}
+
+.video-channel {
+    font-weight: 500;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .header-center {
+        display: none; /* Hide search bar on smaller screens, or implement a toggle */
+    }
+    .header-left .menu-icon {
+        margin-right: 1rem;
+    }
+    .header-right i {
+        margin-left: 1rem;
+    }
+    .sidebar {
+        position: fixed; /* Make it truly overlay */
+        transform: translateX(-100%); /* Hidden by default */
+        height: 100vh;
+        top: 0;
+        z-index: 1001;
+    }
+    .sidebar.visible {
+        transform: translateX(0);
+    }
+    .container {
+        flex-direction: column; /* Stack sidebar and content on small screens */
+    }
+    .main-content {
+        padding: 1rem;
+    }
+    .video-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 0.6rem 1rem;
+    }
+    .menu-icon {
+        font-size: 1.3rem;
+    }
+    .logo {
+        height: 20px;
+    }
+    .header-right i {
+        font-size: 1.1rem;
+        margin-left: 0.8rem;
+    }
+    .user-profile img {
+        width: 25px;
+        height: 25px;
+        margin-left: 0.8rem;
+    }
+    .video-grid {
+        grid-template-columns: 1fr; /* Single column on very small screens */
+    }
+    .video-thumbnail {
+        height: 160px;
+    }
+}
+```
+
+--js--
+```javascript
+document.addEventListener('DOMContentLoaded', function() {
+    const sidebarToggle = document.getElementById('sidebar-toggle');
+    const sidebar = document.getElementById('sidebar');
+
+    if (sidebarToggle && sidebar) {
+        sidebarToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('visible');
+            // Optionally, you might want to adjust main content padding or add an overlay
+            // For this basic example, we'll just toggle the sidebar's visibility class
+        });
+    }
+
+    // Optional: Close sidebar when clicking outside of it
+    document.addEventListener('click', function(event) {
+        // Check if the sidebar is visible and the click is outside the sidebar
+        if (sidebar && sidebar.classList.contains('visible') && !sidebar.contains(event.target) && !sidebarToggle.contains(event.target)) {
+            sidebar.classList.remove('visible');
+        }
+    });
+
+    // Optional: Close sidebar when the window is resized beyond a certain breakpoint
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 768 && sidebar && sidebar.classList.contains('visible')) {
+            sidebar.classList.remove('visible');
+        }
+    });
+});
+```

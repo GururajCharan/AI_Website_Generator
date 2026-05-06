@@ -1,0 +1,388 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charan - Machine Learning Portfolio</title>
+    <style>
+        :root {
+            --primary-color: #007bff;
+            --secondary-color: #6c757d;
+            --background-color: #f8f9fa;
+            --text-color: #343a40;
+            --card-background: #ffffff;
+            --footer-background: #343a40;
+            --footer-text-color: #ffffff;
+            --hover-color: #0056b3;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            margin-top: 10px;
+            font-size: 1.2em;
+            font-style: italic;
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        #about {
+            text-align: center;
+        }
+
+        #about img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            border: 5px solid var(--primary-color);
+            object-fit: cover;
+        }
+
+        #about h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        #about p {
+            font-size: 1.1em;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        #projects h2, #skills h2, #contact h2 {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 40px;
+            color: var(--primary-color);
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background-color: var(--card-background);
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-content {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-content h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+            font-size: 1.4em;
+        }
+
+        .project-content p {
+            font-size: 0.95em;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .project-links {
+            margin-top: auto;
+            text-align: center;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+
+        .project-links a {
+            display: inline-block;
+            margin: 0 10px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .project-links a:hover {
+            color: var(--hover-color);
+            text-decoration: underline;
+        }
+
+        .skills-list {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        .skills-list li {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 25px;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .skills-list li:hover {
+            background-color: var(--hover-color);
+        }
+
+        #contact {
+            background-color: var(--background-color);
+            text-align: center;
+        }
+
+        .contact-links {
+            margin-top: 30px;
+        }
+
+        .contact-links a {
+            display: inline-block;
+            margin: 0 15px;
+            color: var(--text-color);
+            font-size: 1.5em;
+            transition: color 0.3s ease;
+        }
+
+        .contact-links a:hover {
+            color: var(--primary-color);
+        }
+
+        footer {
+            background-color: var(--footer-background);
+            color: var(--footer-text-color);
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9em;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+            header h1 {
+                font-size: 2em;
+            }
+            header p {
+                font-size: 1em;
+            }
+            section {
+                padding: 40px 0;
+            }
+            #about img {
+                width: 150px;
+                height: 150px;
+            }
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+            .contact-links a {
+                font-size: 1.3em;
+                margin: 0 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+            .project-content {
+                padding: 15px;
+            }
+            .skills-list li {
+                padding: 8px 15px;
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Charan</h1>
+            <p>Aspiring Machine Learning Engineer | Data Scientist</p>
+        </div>
+    </header>
+
+    <section id="about">
+        <div class="container">
+            <img src="https://via.placeholder.com/180/007bff/ffffff?text=Charan" alt="Charan Profile Picture">
+            <h2>About Me</h2>
+            <p>
+                A passionate and driven individual with a strong foundation in computer science and a keen interest in the transformative power of Machine Learning. I specialize in developing intelligent systems that solve complex problems and drive innovation. My goal is to leverage data-driven insights to build impactful solutions and contribute to the advancement of AI.
+            </p>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2>Featured Machine Learning Projects</h2>
+            <div class="project-grid">
+
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/300x200/28a745/ffffff?text=Sentiment+Analysis" alt="Project 1">
+                    <div class="project-content">
+                        <h3>Customer Sentiment Analysis</h3>
+                        <p>
+                            Developed a sentiment analysis model using Natural Language Processing (NLP) techniques and machine learning algorithms (e.g., Naive Bayes, LSTM) to analyze customer reviews and feedback. This project aims to identify customer satisfaction levels and extract actionable insights for product improvement.
+                        </p>
+                        <div class="project-links">
+                            <a href="#link-to-repo-1" target="_blank">GitHub</a> | <a href="#link-to-demo-1" target="_blank">Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/300x200/ffc107/ffffff?text=Image+Classification" alt="Project 2">
+                    <div class="project-content">
+                        <h3>Medical Image Classification</h3>
+                        <p>
+                            Built a deep learning model (Convolutional Neural Network - CNN) for classifying medical images (e.g., X-rays, CT scans) to assist in early disease detection. Achieved high accuracy in distinguishing between healthy and diseased samples, demonstrating the potential for AI in healthcare diagnostics.
+                        </p>
+                        <div class="project-links">
+                            <a href="#link-to-repo-2" target="_blank">GitHub</a> | <a href="#link-to-report-2" target="_blank">Report</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/300x200/17a2b8/ffffff?text=Price+Prediction" alt="Project 3">
+                    <div class="project-content">
+                        <h3>Real Estate Price Prediction</h3>
+                        <p>
+                            Engineered a predictive model using regression techniques (e.g., Linear Regression, Random Forest Regressor) to forecast real estate prices based on various features like location, size, and amenities. The model provides accurate price estimations, valuable for buyers, sellers, and investors.
+                        </p>
+                        <div class="project-links">
+                            <a href="#link-to-repo-3" target="_blank">GitHub</a> | <a href="#link-to-demo-3" target="_blank">Live App</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/300x200/6f42c1/ffffff?text=Recommendation+System" alt="Project 4">
+                    <div class="project-content">
+                        <h3>E-commerce Recommendation System</h3>
+                        <p>
+                            Designed and implemented a personalized recommendation engine for an e-commerce platform. Utilized collaborative filtering and content-based filtering approaches to suggest relevant products to users, enhancing user experience and driving sales.
+                        </p>
+                        <div class="project-links">
+                            <a href="#link-to-repo-4" target="_blank">GitHub</a> | <a href="#link-to-paper-4" target="_blank">Paper</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2>Skills & Technologies</h2>
+            <ul class="skills-list">
+                <li>Python</li>
+                <li>Machine Learning</li>
+                <li>Deep Learning</li>
+                <li>TensorFlow</li>
+                <li>PyTorch</li>
+                <li>Scikit-learn</li>
+                <li>Pandas</li>
+                <li>NumPy</li>
+                <li>Data Analysis</li>
+                <li>Data Visualization</li>
+                <li>NLP</li>
+                <li>Computer Vision</li>
+                <li>SQL</li>
+                <li>Git</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <p>I'm always open to new opportunities and collaborations. Feel free to connect with me!</p>
+            <div class="contact-links">
+                <a href="mailto:your.email@example.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/yourlinkedin" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/yourgithub" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://twitter.com/yourtwitter" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Charan. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script>
+        // Basic interactivity for demo purposes, can be expanded
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('click', function() {
+                // Optional: Add more visual feedback or redirect to project details
+                console.log('Clicked on project:', this.querySelector('h3').textContent);
+            });
+        });
+    </script>
+</body>
+</html>
